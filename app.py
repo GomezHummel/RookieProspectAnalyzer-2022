@@ -15,16 +15,8 @@ def start_page():
 
     # Execute the query
     query = '''
-        SELECT p."NAME", CAST(p."AGE" AS INT) AS "AGE", dcs.position, p."GP", p."MPG", p."PPG", p."RPG", p."APG",
-        p."SPG", p."BPG", p."TPG", p."FTA",
-        p."FT%", p."2PA", p."2P%", p."3PA", p."3P%", p."eFG%", p."TS%", p."ORtg", p."DRtg",
-        SUBSTR(dcs.height_wo_shoes_ft_in, 1, INSTR(dcs.height_wo_shoes_ft_in, '.')-1) || '"' AS height_wo_shoes_ft_in,
-        dcs.weight,
-        SUBSTR(dcs.wingspan_ft_in, 1, INSTR(dcs.wingspan_ft_in, '.')-1) || '"' AS wingspan_ft_in,
-        SUBSTR(dcs.standing_reach_ft_in, 1, INSTR(dcs.standing_reach_ft_in, '.')-1) || '"' AS standing_reach_ft_in,
-        dcs.hand_length, dcs.hand_width, dcs.max_vertical_leap
-        FROM players p
-        JOIN draft_combine_stats dcs ON p."NAME" LIKE '%' || dcs.player_name || '%';
+        SELECT *
+        FROM complete_data
     '''
     cursor.execute(query)
 
