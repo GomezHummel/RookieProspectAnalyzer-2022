@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>RookieProspectAnalyzer</title>
+    <link rel="icon" href="static\basketball-better.png" type="image/png">
 
     <style>
         /* CSS Reset */
@@ -32,6 +33,33 @@
 
         .navbar h2 {
             margin: 0;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .filter-container label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .filter-container input {
+            padding: 8px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .filter-container button {
+            padding: 8px 16px;
+            background-color: #3A5A40;
+            color: #F0EBD8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
         .table-container {
@@ -87,6 +115,72 @@
 
     <div class="navbar">
         <h2>RookieProspectAnalyzer</h2>
+    </div>
+
+    <div class="filter-container">
+        <form action="/" method="get">
+            <label for="ppg_min">PPG Min:</label>
+            <input type="number" step="0.1" id="ppg_min" name="ppg_min" value="{{ request.args.get('ppg_min') }}">
+
+            <label for="ppg_max">PPG Max:</label>
+            <input type="number" step="0.1" id="ppg_max" name="ppg_max" value="{{ request.args.get('ppg_max') }}">
+            
+            <label for="age_min">Age Min:</label>
+            <input type="number" id="age_min" name="age_min" value="{{ request.args.get('age_min') }}">
+            
+            <label for="age_max">Age Max:</label>
+            <input type="number" id="age_max" name="age_max" value="{{ request.args.get('age_max') }}">
+            
+            <label for="gp_min">GP Min:</label>
+            <input type="number" id="gp_min" name="gp_min" value="{{ request.args.get('gp_min') }}">
+            
+            <label for="gp_max">GP Max:</label>
+            <input type="number" id="gp_max" name="gp_max" value="{{ request.args.get('gp_max') }}">
+            
+            <label for="mpg_min">MPG Min:</label>
+            <input type="number" step="0.1" id="mpg_min" name="mpg_min" value="{{ request.args.get('mpg_min') }}">
+            
+            <label for="mpg_max">MPG Max:</label>
+            <input type="number" step="0.1" id="mpg_max" name="mpg_max" value="{{ request.args.get('mpg_max') }}">
+            
+            <label for="rpg_min">RPG Min:</label>
+            <input type="number" step="0.1" id="rpg_min" name="rpg_min" value="{{ request.args.get('rpg_min') }}">
+            
+            <label for="rpg_max">RPG Max:</label>
+            <input type="number" step="0.1" id="rpg_max" name="rpg_max" value="{{ request.args.get('rpg_max') }}">
+            
+            <label for="apg_min">APG Min:</label>
+            <input type="number" step="0.1" id="apg_min" name="apg_min" value="{{ request.args.get('apg_min') }}">
+            
+            <label for="apg_max">APG Max:</label>
+            <input type="number" step="0.1" id="apg_max" name="apg_max" value="{{ request.args.get('apg_max') }}">
+            
+            <label for="spg_min">SPG Min:</label>
+            <input type="number" step="0.1" id="spg_min" name="spg_min" value="{{ request.args.get('spg_min') }}">
+            
+            <label for="spg_max">SPG Max:</label>
+            <input type="number" step="0.1" id="spg_max" name="spg_max" value="{{ request.args.get('spg_max') }}">
+            
+            <label for="bpg_min">BPG Min:</label>
+            <input type="number" step="0.1" id="bpg_min" name="bpg_min" value="{{ request.args.get('bpg_min') }}">
+            
+            <label for="bpg_max">BPG Max:</label>
+            <input type="number" step="0.1" id="bpg_max" name="bpg_max" value="{{ request.args.get('bpg_max') }}">
+            
+            <label for="tpg_min">TPG Min:</label>
+            <input type="number" step="0.1" id="tpg_min" name="tpg_min" value="{{ request.args.get('tpg_min') }}">
+            
+            <label for="tpg_max">TPG Max:</label>
+            <input type="number" step="0.1" id="tpg_max" name="tpg_max" value="{{ request.args.get('tpg_max') }}">
+            
+            <label for="fta_min">FTA Min:</label>
+            <input type="number" id="fta_min" name="fta_min" value="{{ request.args.get('fta_min') }}">
+            
+            <label for="fta_max">FTA Max:</label>
+            <input type="number" id="fta_max" name="fta_max" value="{{ request.args.get('fta_max') }}">
+            
+            <button type="submit">Apply Filters</button>
+        </form>
     </div>
 
     <div class="table-container">
