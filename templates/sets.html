@@ -40,19 +40,24 @@
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
-
+        
         .filter-container label {
             margin-right: 10px;
             font-weight: bold;
+            display: inline-block;
+            width: 80px;
+            font-size: 14px;
         }
-
+        
         .filter-container input {
             padding: 8px;
             border: 1px solid #333;
             border-radius: 4px;
+            margin-right: 10px;
             margin-bottom: 10px;
+            width: 120px;
         }
-
+        
         .filter-container button {
             padding: 8px 16px;
             background-color: #3A5A40;
@@ -60,7 +65,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-        }
+        }        
 
         .table-container {
             width: 100%;
@@ -120,65 +125,119 @@
     <div class="filter-container">
         <form action="/" method="get">
             <label for="ppg_min">PPG Min:</label>
-            <input type="number" step="0.1" id="ppg_min" name="ppg_min" value="{{ request.args.get('ppg_min') }}">
+            <input type="number" step="0.1" id="ppg_min" name="ppg_min" value="{{ ppg_min }}">
 
             <label for="ppg_max">PPG Max:</label>
-            <input type="number" step="0.1" id="ppg_max" name="ppg_max" value="{{ request.args.get('ppg_max') }}">
+            <input type="number" step="0.1" id="ppg_max" name="ppg_max" value="{{ ppg_max }}">
             
             <label for="age_min">Age Min:</label>
-            <input type="number" id="age_min" name="age_min" value="{{ request.args.get('age_min') }}">
+            <input type="number" id="age_min" name="age_min" value="{{ age_min }}">
             
             <label for="age_max">Age Max:</label>
-            <input type="number" id="age_max" name="age_max" value="{{ request.args.get('age_max') }}">
+            <input type="number" id="age_max" name="age_max" value="{{ age_max }}">
             
             <label for="gp_min">GP Min:</label>
-            <input type="number" id="gp_min" name="gp_min" value="{{ request.args.get('gp_min') }}">
+            <input type="number" id="gp_min" name="gp_min" value="{{ gp_min }}">
             
             <label for="gp_max">GP Max:</label>
-            <input type="number" id="gp_max" name="gp_max" value="{{ request.args.get('gp_max') }}">
+            <input type="number" id="gp_max" name="gp_max" value="{{ gp_max }}">
             
             <label for="mpg_min">MPG Min:</label>
-            <input type="number" step="0.1" id="mpg_min" name="mpg_min" value="{{ request.args.get('mpg_min') }}">
+            <input type="number" step="0.1" id="mpg_min" name="mpg_min" value="{{ mpg_min }}">
             
             <label for="mpg_max">MPG Max:</label>
-            <input type="number" step="0.1" id="mpg_max" name="mpg_max" value="{{ request.args.get('mpg_max') }}">
+            <input type="number" step="0.1" id="mpg_max" name="mpg_max" value="{{ mpg_max }}">
             
             <label for="rpg_min">RPG Min:</label>
-            <input type="number" step="0.1" id="rpg_min" name="rpg_min" value="{{ request.args.get('rpg_min') }}">
+            <input type="number" step="0.1" id="rpg_min" name="rpg_min" value="{{ rpg_min }}">
             
             <label for="rpg_max">RPG Max:</label>
-            <input type="number" step="0.1" id="rpg_max" name="rpg_max" value="{{ request.args.get('rpg_max') }}">
+            <input type="number" step="0.1" id="rpg_max" name="rpg_max" value="{{ rpg_max }}">
             
             <label for="apg_min">APG Min:</label>
-            <input type="number" step="0.1" id="apg_min" name="apg_min" value="{{ request.args.get('apg_min') }}">
+            <input type="number" step="0.1" id="apg_min" name="apg_min" value="{{ apg_min }}">
             
             <label for="apg_max">APG Max:</label>
-            <input type="number" step="0.1" id="apg_max" name="apg_max" value="{{ request.args.get('apg_max') }}">
+            <input type="number" step="0.1" id="apg_max" name="apg_max" value="{{ apg_max }}">
             
             <label for="spg_min">SPG Min:</label>
-            <input type="number" step="0.1" id="spg_min" name="spg_min" value="{{ request.args.get('spg_min') }}">
+            <input type="number" step="0.1" id="spg_min" name="spg_min" value="{{ spg_min }}">
             
             <label for="spg_max">SPG Max:</label>
-            <input type="number" step="0.1" id="spg_max" name="spg_max" value="{{ request.args.get('spg_max') }}">
+            <input type="number" step="0.1" id="spg_max" name="spg_max" value="{{ spg_max }}">
             
             <label for="bpg_min">BPG Min:</label>
-            <input type="number" step="0.1" id="bpg_min" name="bpg_min" value="{{ request.args.get('bpg_min') }}">
+            <input type="number" step="0.1" id="bpg_min" name="bpg_min" value="{{ bpg_min }}">
             
             <label for="bpg_max">BPG Max:</label>
-            <input type="number" step="0.1" id="bpg_max" name="bpg_max" value="{{ request.args.get('bpg_max') }}">
+            <input type="number" step="0.1" id="bpg_max" name="bpg_max" value="{{ bpg_max }}">
             
             <label for="tpg_min">TPG Min:</label>
-            <input type="number" step="0.1" id="tpg_min" name="tpg_min" value="{{ request.args.get('tpg_min') }}">
+            <input type="number" step="0.1" id="tpg_min" name="tpg_min" value="{{ tpg_min }}">
             
             <label for="tpg_max">TPG Max:</label>
-            <input type="number" step="0.1" id="tpg_max" name="tpg_max" value="{{ request.args.get('tpg_max') }}">
+            <input type="number" step="0.1" id="tpg_max" name="tpg_max" value="{{ tpg_max }}">
             
             <label for="fta_min">FTA Min:</label>
-            <input type="number" id="fta_min" name="fta_min" value="{{ request.args.get('fta_min') }}">
+            <input type="number" step="1" id="fta_min" name="fta_min" value="{{ fta_min }}">
             
             <label for="fta_max">FTA Max:</label>
-            <input type="number" id="fta_max" name="fta_max" value="{{ request.args.get('fta_max') }}">
-            
+            <input type="number" step="1" id="fta_max" name="fta_max" value="{{ fta_max }}">
+
+            <label for="ft_min">FT% Min:</label>
+            <input type="number" step="0.001" id="ft_min" name="ft_min" value="{{ ft_min }}">
+
+            <label for="ft_max">FT% Max:</label>
+            <input type="number" step="0.001" id="ft_max" name="ft_max" value="{{ ft_max }}">
+
+            <label for="2pa_min">2PA Min:</label>
+            <input type="number" step="1" id="pa2_min" name="pa2_min" value="{{ pa2_min }}">
+
+            <label for="2pa_max">2PA Max:</label>
+            <input type="number" step="1" id="pa2_max" name="pa2_max" value="{{ pa2_max }}">
+
+            <label for="p2_min">2P% Min:</label>
+            <input type="number" step="0.001" id="2p_min" name="2p_min" value="{{ p2_min }}">
+
+            <label for="p2_max">2P% Max:</label>
+            <input type="number" step="0.001" id="2p_max" name="2p_max" value="{{ p2_max }}">
+
+            <label for="3pa_min">3PA Min:</label>
+            <input type="number" step="1" id="3pa_min" name="3pa_min" value="{{ pa3_min }}">
+
+            <label for="3pa_max">3PA Max:</label>
+            <input type="number" step="1" id="3pa_max" name="3pa_max" value="{{ pa3_max }}">
+
+            <label for="p3_min">3P% Min:</label>
+            <input type="number" step="0.001" id="3p_min" name="3p_min" value="{{ p3_min }}">
+
+            <label for="p3_max">3P% Max:</label>
+            <input type="number" step="0.001" id="3p_max" name="3p_max" value="{{ p3_max }}">
+
+            <label for="efg_min">eFG% Min:</label>
+            <input type="number" step="0.001" id="efg_min" name="efg_min" value="{{ efg_min }}">
+
+            <label for="efg_max">eFG% Max:</label>
+            <input type="number" step="0.001" id="efg_max" name="efg_max" value="{{ efg_max }}">
+
+            <label for="ts_min">TS% Min:</label>
+            <input type="number" step="0.001" id="ts_min" name="ts_min" value="{{ ts_min }}">
+
+            <label for="ts_max">TS% Max:</label>
+            <input type="number" step="0.001" id="ts_max" name="ts_max" value="{{ ts_max }}">
+
+            <label for="ortg_min">ORtg Min:</label>
+            <input type="number" step="1" id="ortg_min" name="ortg_min" value="{{ ortg_min }}">
+
+            <label for="ortg_max">ORtg Max:</label>
+            <input type="number" step="1" id="ortg_max" name="ortg_max" value="{{ ortg_max }}">
+
+            <label for="drtg_min">DRtg Min:</label>
+            <input type="number" step="1" id="drtg_min" name="drtg_min" value="{{ drtg_min }}">
+
+            <label for="drtg_max">DRtg Max:</label>
+            <input type="number" step="1" id="drtg_max" name="drtg_max" value="{{ drtg_max }}">
+
             <button type="submit">Apply Filters</button>
         </form>
     </div>
@@ -187,9 +246,10 @@
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>#</th>
+                    <th>Player</th>
                     <th>Age</th>
-                    <th>POS</th>
+                    <th>Position</th>
                     <th>GP</th>
                     <th>MPG</th>
                     <th>PPG</th>
@@ -208,46 +268,33 @@
                     <th>TS%</th>
                     <th>ORtg</th>
                     <th>DRtg</th>
-                    <th>Height</th>
-                    <th>Weight</th>
-                    <th>Wingspan</th>
-                    <th>Standing Reach</th>
-                    <th>Hand Length</th>
-                    <th>Hand Width</th>
-                    <th>Vertical</th>
                 </tr>
             </thead>
             <tbody>
                 {% for result in results %}
                 <tr>
-                    <td>{{ result[0] }}</td>
-                    <td>{{ result[1] }}</td>
-                    <td>{{ result[2] }}</td>
-                    <td>{{ result[3] }}</td>
-                    <td>{{ result[4] }}</td>
-                    <td>{{ result[5] }}</td>
-                    <td>{{ result[6] }}</td>
-                    <td>{{ result[7] }}</td>
-                    <td>{{ result[8] }}</td>
-                    <td>{{ result[9] }}</td>
-                    <td>{{ result[10] }}</td>
-                    <td>{{ result[11] }}</td>
-                    <td>{{ result[12] }}</td>
-                    <td>{{ result[13] }}</td>
-                    <td>{{ result[14] }}</td>
-                    <td>{{ result[15] }}</td>
-                    <td>{{ result[16] }}</td>
-                    <td>{{ result[17] }}</td>
-                    <td>{{ result[18] }}</td>
-                    <td>{{ result[19] }}</td>
-                    <td>{{ result[20] }}</td>
-                    <td>{{ result[21] }}</td>
-                    <td>{{ result[22] }}</td>
-                    <td>{{ result[23] }}</td>
-                    <td>{{ result[24] }}</td>
-                    <td>{{ result[25] }}</td>
-                    <td>{{ result[26] }}</td>
-                    <td>{{ result[27] }}</td>
+                <td>{{ loop.index }}</td>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+                <td>{{ result[3] }}</td>
+                <td>{{ result[4] }}</td>
+                <td>{{ result[5] }}</td>
+                <td>{{ result[6] }}</td>
+                <td>{{ result[7] }}</td>
+                <td>{{ result[8] }}</td>
+                <td>{{ result[9] }}</td>
+                <td>{{ result[10] }}</td>
+                <td>{{ result[11] }}</td>
+                <td>{{ result[12] }}</td>
+                <td>{{ result[13] }}</td>
+                <td>{{ result[14] }}</td>
+                <td>{{ result[15] }}</td>
+                <td>{{ result[16] }}</td>
+                <td>{{ result[17] }}</td>
+                <td>{{ result[18] }}</td>
+                <td>{{ result[19] }}</td>
+                <td>{{ result[20] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
