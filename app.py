@@ -1,4 +1,3 @@
-import math
 from flask import Flask, request, render_template
 import sqlite3
 
@@ -84,7 +83,6 @@ def start_page():
     ORDER BY {} {}
     '''.format(sort_by, sort_dir)
 
-
     cursor.execute(query, (
         ppg_min, ppg_max, age_min, age_max, gp_min, gp_max, mpg_min, mpg_max,
         rpg_min, rpg_max, apg_min, apg_max, spg_min, spg_max, bpg_min, bpg_max,
@@ -99,7 +97,6 @@ def start_page():
     conn.close()
 
     return render_template("sets.html", results=results, sort_by=sort_by, sort_dir=sort_dir)
-
 
 if __name__ == '__main__':
     app.run()
