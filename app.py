@@ -51,6 +51,17 @@ def start_page():
     drtg_min = request.args.get("drtg_min", default=0, type=int)
     drtg_max = request.args.get("drtg_max", default=1000, type=int)
 
+    sort_by = request.args.get("sort_by", "name")
+    sort_dir = request.args.get("sort_dir", "asc")
+
+    if request.args.get("sort_by") == sort_by:
+        if sort_dir == "asc":
+            sort_dir = "desc"
+        else:
+            sort_dir = "asc"
+    else:
+        sort_dir = "asc"
+
     query = '''
     SELECT *
     FROM complete_data
@@ -73,9 +84,16 @@ def start_page():
     AND "TS%" >= ? AND "TS%" <= ?
     AND ORtg >= ? AND ORtg <= ?
     AND DRtg >= ? AND DRtg <= ?
-    '''
+    ORDER BY {} {}
+    '''.format(sort_by, sort_dir)
 
-    cursor.execute(query, (ppg_min, ppg_max, age_min, age_max, gp_min, gp_max, mpg_min, mpg_max, rpg_min, rpg_max, apg_min, apg_max, spg_min, spg_max, bpg_min, bpg_max, tpg_min, tpg_max, fta_min, fta_max, ft_min, ft_max, pa2_min, pa2_max, p2_min, p2_max, pa3_min, pa3_max, p3_min, p3_max, efg_min, efg_max, ts_min, ts_max, ortg_min, ortg_max, drtg_min, drtg_max))
+    cursor.execute(query, (
+        ppg_min, ppg_max, age_min, age_max, gp_min, gp_max, mpg_min, mpg_max,
+        rpg_min, rpg_max, apg_min, apg_max, spg_min, spg_max, bpg_min, bpg_max,
+        tpg_min, tpg_max, fta_min, fta_max, ft_min, ft_max, pa2_min, pa2_max,
+        p2_min, p2_max, pa3_min, pa3_max, p3_min, p3_max, efg_min, efg_max,
+        ts_min, ts_max, ortg_min, ortg_max, drtg_min, drtg_max
+    ))
 
     results = cursor.fetchall()
 

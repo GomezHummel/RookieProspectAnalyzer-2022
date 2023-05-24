@@ -262,55 +262,53 @@
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Player</th>
-                    <th>Age</th>
-                    <th>Position</th>
-                    <th>GP</th>
-                    <th>MPG</th>
-                    <th>PPG</th>
-                    <th>RPG</th>
-                    <th>APG</th>
-                    <th>SPG</th>
-                    <th>BPG</th>
-                    <th>TPG</th>
-                    <th>FTA</th>
-                    <th>FT%</th>
-                    <th>2PA</th>
-                    <th>2P%</th>
-                    <th>3PA</th>
-                    <th>3P%</th>
-                    <th>eFG%</th>
-                    <th>TS%</th>
-                    <th>ORtg</th>
-                    <th>DRtg</th>
+                    <th><a href="{{ url_for('start_page', sort_by='NAME', sort_dir=sort_dir) }}">Player</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='AGE', sort_dir=sort_dir) }}">Age</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='position', sort_dir=sort_dir) }}">Position</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='GP', sort_dir=sort_dir) }}">GP</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='MPG', sort_dir=sort_dir) }}">MPG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='PPG', sort_dir=sort_dir) }}">PPG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='RPG', sort_dir=sort_dir) }}">RPG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='APG', sort_dir=sort_dir) }}">APG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='SPG', sort_dir=sort_dir) }}">SPG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='BPG', sort_dir=sort_dir) }}">BPG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='TPG', sort_dir=sort_dir) }}">TPG</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='FTA', sort_dir=sort_dir) }}">FTA</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`FT%`', sort_dir=sort_dir) }}">FT%</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`2PA`', sort_dir=sort_dir) }}">2PA</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`2P%`', sort_dir=sort_dir) }}">2P%</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`3PA`', sort_dir=sort_dir) }}">3PA</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`3P%`', sort_dir=sort_dir) }}">3P%</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`eFG%`', sort_dir=sort_dir) }}">eFG%</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`TS%`', sort_dir=sort_dir) }}">TS%</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='ORtg', sort_dir=sort_dir) }}">ORtg</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='DRtg', sort_dir=sort_dir) }}">DRtg</a></th>
                 </tr>
             </thead>
             <tbody>
                 {% for result in results %}
                 <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{ result[0] }}</td>
-                <td>{{ result[1] }}</td>
-                <td>{{ result[2] }}</td>
-                <td>{{ result[3] }}</td>
-                <td>{{ result[4] }}</td>
-                <td>{{ result[5] }}</td>
-                <td>{{ result[6] }}</td>
-                <td>{{ result[7] }}</td>
-                <td>{{ result[8] }}</td>
-                <td>{{ result[9] }}</td>
-                <td>{{ result[10] }}</td>
-                <td>{{ result[11] }}</td>
-                <td>{{ result[12] }}</td>
-                <td>{{ result[13] }}</td>
-                <td>{{ result[14] }}</td>
-                <td>{{ result[15] }}</td>
-                <td>{{ result[16] }}</td>
-                <td>{{ result[17] }}</td>
-                <td>{{ result[18] }}</td>
-                <td>{{ result[19] }}</td>
-                <td>{{ result[20] }}</td>
+                    <td>{{ result[0] }}</td>
+                    <td>{{ result[1] }}</td>
+                    <td>{{ result[2] }}</td>
+                    <td>{{ result[3] }}</td>
+                    <td>{{ result[4] }}</td>
+                    <td>{{ result[5] }}</td>
+                    <td>{{ result[6] }}</td>
+                    <td>{{ result[7] }}</td>
+                    <td>{{ result[8] }}</td>
+                    <td>{{ result[9] }}</td>
+                    <td>{{ result[10] }}</td>
+                    <td>{{ result[11] }}</td>
+                    <td>{{ result[12] }}</td>
+                    <td>{{ result[13] }}</td>
+                    <td>{{ result[14] }}</td>
+                    <td>{{ result[15] }}</td>
+                    <td>{{ result[16] }}</td>
+                    <td>{{ result[17] }}</td>
+                    <td>{{ result[18] }}</td>
+                    <td>{{ result[19] }}</td>
+                    <td>{{ result[20] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
