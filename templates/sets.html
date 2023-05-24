@@ -2,116 +2,128 @@
 <html>
 <head>
     <title>RookieProspectAnalyzer</title>
-    <link rel="icon" href="static\basketball-better.png" type="image/png">
+    <link rel="icon" href="static\mag-logo-black.png" type="image/png">
 
     <style>
         /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            background-color: #DAD7CD;
-            color: #333;
-            font-family: 'Montserrat', Helvetica, Arial, serif;
-            padding: 20px; /* Added padding to all sides */
-        }
+    body {
+        background-color: #DAD7CD;
+        color: #333;
+        font-family: 'Montserrat', Helvetica, Arial, serif;
+        padding: 20px; /* Added padding to all sides */
+    }
 
-        h1 {
-            margin-bottom: 20px;
-        }
+    h1 {
+        margin-bottom: 20px;
+    }
 
-        .navbar {
-            background-color: #3A5A40;
-            padding: 15px;
-            margin-bottom: 20px;
-            color: #F0EBD8;
-            width: 100%; /* Takes up the whole page width */
-        }
+    .navbar {
+        background-color: #3A5A40;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: #F0EBD8;
+        width: 100%; /* Takes up the whole page width */
+        display: flex; /* Added */
+        align-items: center; /* Added */
+    }
 
-        .navbar h2 {
-            margin: 0;
-        }
+    .navbar .logo {
+        margin-right: 10px;
+    }
 
-        .filter-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        
-        .filter-container label {
-            margin-right: 10px;
-            font-weight: bold;
-            display: inline-block;
-            width: 80px;
-            font-size: 14px;
-        }
-        
-        .filter-container input {
-            padding: 8px;
-            border: 1px solid #333;
-            border-radius: 4px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            width: 120px;
-        }
-        
-        .filter-container button {
-            padding: 8px 16px;
-            background-color: #3A5A40;
-            color: #F0EBD8;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }        
+    .navbar .logo img {
+        width: 50px;
+        height: auto;
+    }
 
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-        }
+    .navbar h2 {
+        margin: 0;
+    }
 
-        table {
-            border-collapse: collapse;
-            border: 1px solid #333;
-            width: 100%; /* Added width to fill the available space */
-        }
+    .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #333;
-            border-right: 1px solid #333; /* Added border-right */
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            white-space: normal;
-        }
+    .filter-container label {
+        margin-right: 10px;
+        font-weight: bold;
+        display: inline-block;
+        width: 80px;
+        font-size: 14px;
+    }
 
-        th {
-            background-color: #3A5A40;
-            color: #F0EBD8;
-            font-weight: bold;
-            font-size: 14px;
-            white-space: nowrap;
-        }
+    .filter-container input {
+        padding: 8px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 120px;
+    }
 
-        tr:nth-child(even) {
-            background-color: #F0EBD8;
-        }
+    .filter-container button {
+        padding: 8px 16px;
+        background-color: #3A5A40;
+        color: #F0EBD8;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-        tr:hover {
-            background-color: #C5D8B9;
-        }
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
 
-        .rank-column {
-            font-weight: bold;
-        }
-        
-        /* Remove border-right from last cell in each row */
-        tr td:last-child {
-            border-right: none;
-        }
+    table {
+        border-collapse: collapse;
+        border: 1px solid #333;
+        width: 100%; /* Added width to fill the available space */
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #333;
+        border-right: 1px solid #333; /* Added border-right */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    th {
+        background-color: #3A5A40;
+        color: #F0EBD8;
+        font-weight: bold;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F0EBD8;
+    }
+
+    tr:hover {
+        background-color: #C5D8B9;
+    }
+
+    .rank-column {
+        font-weight: bold;
+    }
+
+    /* Remove border-right from last cell in each row */
+    tr td:last-child {
+        border-right: none;
+    }
+
     </style>
 
 </head>
@@ -119,8 +131,12 @@
 <body>
 
     <div class="navbar">
+        <div class="logo">
+            <img src="static\mag-logo-best.png" alt="Logo">
+        </div>
         <h2>RookieProspectAnalyzer</h2>
     </div>
+    
 
     <div class="filter-container">
         <form action="/" method="get">
