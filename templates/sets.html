@@ -262,8 +262,9 @@
         <table>
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>
-                        <a href="{{ url_for('start_page', sort_by='NAME', sort_dir=sort_dir) }}{% for key, value in request.args.items() %}{% if key != 'sort_by' and key != 'sort_dir' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">NAME
+                        <a href="{{ url_for('start_page', sort_by='NAME', sort_dir=sort_dir) }}{% for key, value in request.args.items() %}{% if key != 'sort_by' and key != 'sort_dir' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Name
                           {% if sort_by == 'NAME' %}
                             {% if sort_dir == 'asc' %}
                               <i class="arrow-up"></i>
@@ -274,7 +275,7 @@
                         </a>
                     </th>                  
                     <th>
-                        <a href="{{ url_for('start_page', sort_by='AGE', sort_dir=sort_dir) }}{% for key, value in request.args.items() %}{% if key != 'sort_by' and key != 'sort_dir' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">AGE
+                        <a href="{{ url_for('start_page', sort_by='AGE', sort_dir=sort_dir) }}{% for key, value in request.args.items() %}{% if key != 'sort_by' and key != 'sort_dir' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Age
                             {% if sort_by == 'AGE' %}
                                 {% if sort_dir == 'asc' %}
                                     <i class="arrow-up"></i>
@@ -285,7 +286,7 @@
                         </a>
                     </th>
                     <th>
-                        <a href="{{ url_for('start_page', sort_by='position', sort_dir=sort_dir) }}{% for key, value in request.args.items() %}{% if key != 'sort_by' and key != 'sort_dir' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">position
+                        <a href="{{ url_for('start_page', sort_by='position', sort_dir=sort_dir) }}{% for key, value in request.args.items() %}{% if key != 'sort_by' and key != 'sort_dir' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Position
                             {% if sort_by == 'position' %}
                                 {% if sort_dir == 'asc' %}
                                     <i class="arrow-up"></i>
@@ -498,6 +499,7 @@
             <tbody>
                 {% for result in results %}
                 <tr>
+                    <td>{{ loop.index }}</td>
                     <td>{{ result[0] }}</td>
                     <td>{{ result[1] }}</td>
                     <td>{{ result[2] }}</td>
@@ -519,7 +521,6 @@
                     <td>{{ result[18] }}</td>
                     <td>{{ result[19] }}</td>
                     <td>{{ result[20] }}</td>
-                    <td>{{ result[21] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
