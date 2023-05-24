@@ -262,27 +262,27 @@
         <table>
             <thead>
                 <tr>
-                    <th><a href="{{ url_for('start_page', sort_by='NAME', sort_dir=sort_dir) }}">Player</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='AGE', sort_dir=sort_dir) }}">Age</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='position', sort_dir=sort_dir) }}">Position</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='GP', sort_dir=sort_dir) }}">GP</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='MPG', sort_dir=sort_dir) }}">MPG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='PPG', sort_dir=sort_dir) }}">PPG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='RPG', sort_dir=sort_dir) }}">RPG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='APG', sort_dir=sort_dir) }}">APG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='SPG', sort_dir=sort_dir) }}">SPG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='BPG', sort_dir=sort_dir) }}">BPG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='TPG', sort_dir=sort_dir) }}">TPG</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='FTA', sort_dir=sort_dir) }}">FTA</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`FT%`', sort_dir=sort_dir) }}">FT%</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`2PA`', sort_dir=sort_dir) }}">2PA</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`2P%`', sort_dir=sort_dir) }}">2P%</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`3PA`', sort_dir=sort_dir) }}">3PA</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`3P%`', sort_dir=sort_dir) }}">3P%</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`eFG%`', sort_dir=sort_dir) }}">eFG%</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='`TS%`', sort_dir=sort_dir) }}">TS%</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='ORtg', sort_dir=sort_dir) }}">ORtg</a></th>
-                    <th><a href="{{ url_for('start_page', sort_by='DRtg', sort_dir=sort_dir) }}">DRtg</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='NAME', sort_dir=sort_dir) }}">NAME {% if sort_by == 'NAME' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='AGE', sort_dir=sort_dir) }}">AGE {% if sort_by == 'AGE' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='position', sort_dir=sort_dir) }}">position {% if sort_by == 'position' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='GP', sort_dir=sort_dir) }}">GP {% if sort_by == 'GP' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='MPG', sort_dir=sort_dir) }}">MPG {% if sort_by == 'MPG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='PPG', sort_dir=sort_dir) }}">PPG {% if sort_by == 'PPG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='RPG', sort_dir=sort_dir) }}">RPG {% if sort_by == 'RPG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='APG', sort_dir=sort_dir) }}">APG {% if sort_by == 'APG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='SPG', sort_dir=sort_dir) }}">SPG {% if sort_by == 'SPG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='BPG', sort_dir=sort_dir) }}">BPG {% if sort_by == 'BPG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='TPG', sort_dir=sort_dir) }}">TPG {% if sort_by == 'TPG' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='FTA', sort_dir=sort_dir) }}">FTA {% if sort_by == 'FTA' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`FT%`', sort_dir=sort_dir) }}">FT% {% if sort_by == '`FT%`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`2PA`', sort_dir=sort_dir) }}">2PA {% if sort_by == '`2PA`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`2P%`', sort_dir=sort_dir) }}">2P% {% if sort_by == '`2P%`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`3PA`', sort_dir=sort_dir) }}">3PA {% if sort_by == '`3PA`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`3P%`', sort_dir=sort_dir) }}">3P% {% if sort_by == '`3P%`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`eFG%`', sort_dir=sort_dir) }}">eFG% {% if sort_by == '`eFG%`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='`TS%`', sort_dir=sort_dir) }}">TS% {% if sort_by == '`TS%`' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='ORtg', sort_dir=sort_dir) }}">ORtg {% if sort_by == 'ORtg' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
+                    <th><a href="{{ url_for('start_page', sort_by='DRtg', sort_dir=sort_dir) }}">DRtg {% if sort_by == 'DRtg' %}{% if sort_dir == 'asc' %}<i class="arrow-up"></i>{% else %}<i class="arrow-down"></i>{% endif %}{% endif %}</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -309,6 +309,7 @@
                     <td>{{ result[18] }}</td>
                     <td>{{ result[19] }}</td>
                     <td>{{ result[20] }}</td>
+                    <td>{{ result[21] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

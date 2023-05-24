@@ -54,16 +54,13 @@ def start_page():
     sort_by = request.args.get("sort_by", "name")
     sort_dir = request.args.get("sort_dir", "asc")
 
-    if request.args.get("sort_by") == sort_by:
-        if sort_dir == "asc":
-            sort_dir = "desc"
-        else:
-            sort_dir = "asc"
+    if sort_by == request.args.get("sort_by"):
+        sort_dir = "desc" if sort_dir == "asc" else "asc"
     else:
         sort_dir = "asc"
 
     query = '''
-    SELECT *
+    SELECT NAME, AGE, position, GP, MPG, PPG, RPG, APG, SPG, BPG, TPG, FTA, "FT%", "2PA", "2P%", "3PA", "3P%", "eFG%", "TS%", ORtg, DRtg
     FROM complete_data
     WHERE PPG >= ? AND PPG <= ?
     AND Age >= ? AND Age <= ?
@@ -87,6 +84,7 @@ def start_page():
     ORDER BY {} {}
     '''.format(sort_by, sort_dir)
 
+
     cursor.execute(query, (
         ppg_min, ppg_max, age_min, age_max, gp_min, gp_max, mpg_min, mpg_max,
         rpg_min, rpg_max, apg_min, apg_max, spg_min, spg_max, bpg_min, bpg_max,
@@ -100,7 +98,7 @@ def start_page():
     cursor.close()
     conn.close()
 
-    return render_template("sets.html", results=results)
+    return render_template("sets.html", results=results, sort_by=sort_by, sort_dir=sort_dir)
 
 
 if __name__ == '__main__':
