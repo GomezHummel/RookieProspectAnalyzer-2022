@@ -153,7 +153,7 @@ tr td:last-child {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #DAD7CD; /* Match your body background color */
+    background: #DAD7CD;
 }
 
 /* Handle */
@@ -163,5 +163,5 @@ tr td:last-child {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #006847; /* Slightly darker green on hover */
+    background: #006847; /* Slightly darker hover */
 }
