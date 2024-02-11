@@ -1,0 +1,167 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DAD7CD;
+    color: #333;
+    font-family: 'Montserrat', Helvetica, Arial, serif;
+    padding-top: 100px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#sticky-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #3A5A40;
+    padding: 15px;
+    margin: 0; /* Remove the margin to make it extend from left to right */
+    color: #F0EBD8;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo {
+    margin-right: 10px;
+}
+
+.navbar .logo img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.filter-container label {
+    margin-right: 10px;
+    font-weight: bold;
+    display: inline-block;
+    width: 80px;
+    font-size: 14px;
+}
+
+.filter-container input {
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 120px;
+}
+
+.filter-container button {
+    padding: 8px 16px;
+    background-color: #3A5A40;
+    color: #F0EBD8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.table-container {
+    width: 98.8%;
+    margin-left: 15px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #333;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+th {
+    background-color: #3A5A40;
+    color: #F0EBD8;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+tr:nth-child(even) {
+    background-color: #F0EBD8;
+}
+
+tr:hover {
+    background-color: #C5D8B9;
+}
+
+.rank-column {
+    font-weight: bold;
+}
+
+tr td:last-child {
+    border-right: none;
+}
+
+.table-container th a {
+    text-decoration: none;
+    color: #DAD7CD;
+}
+
+.table-container th a:hover {
+    color: #DAD7CD;
+}
+
+.arrow-up::before {
+    content: "\2191";
+    display: inline-block;
+    vertical-align: middle;
+}    
+    
+.arrow-down::before {
+    content: "\2193";
+    display: inline-block;
+    vertical-align: middle;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #DAD7CD; /* Match your body background color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00471B; /* Bucks green color */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #006847; /* Slightly darker green on hover */
+}
