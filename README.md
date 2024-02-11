@@ -1,4 +1,4 @@
-# RookieProspectAnalyzer
+# RookieProspectAnalyzer 2022 NBA Draft Edition
 
 ⭐ **Your go-to tool for NBA rookie insights!** Get ready to dive into the stats and potential of the league's hottest newcomers.
 
